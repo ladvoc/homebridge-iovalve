@@ -1,0 +1,19 @@
+{
+    "name": "homebridge-gpio-valve",
+    "version": "0.1.0",
+    "main": "index.js",
+    "repository": "https://github.com/jacobgelman/homebridge-gpio-valve.git",
+    "bugs": {
+        "url": "https://github.com/jacobgelman/homebridge-gpio-valve/issues"
+    },
+    "author": "Jacob Gelman <jacobgelman@icloud.com>",
+    "license": "MIT",
+    "keywords": [
+        "homebridge-plugin"
+    ],
+    "engines": {
+        "node": ">=8.11.2",
+        "homebridge": ">=0.2.0"
+    },
+    "private": true,
+}
