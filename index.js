@@ -32,8 +32,17 @@ class GPIOValveAccessory {
             .setCharacteristic(Characteristic.SerialNumber, this.serialNumber)
 	        .setCharacteristic(Characteristic.FirmwareRevision, this.firmwareRevision)
 
+        this.valveService = new Service.Valve()
+	this.valveService
+	    .setCharacteristic(Characteristic.Active, Characteristic.Active.INACTIVE)
+            .setCharacteristic(Characteristic.InUse, Characteristic.InUse.NOT_IN_USE)
+            .setCharacteristic(Characteristic.ValveType, Characteristic.ValveType.GENERIC_VALVE)
+            .setCharacteristic(Characteristic.SetDuration, 0)
+            .setCharacteristic(Characteristic.RemainingDuration, 0)
+
         return [
-            this.informationService
+            this.informationService,
+            this.valveService
         ]
     }
 
