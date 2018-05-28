@@ -1,10 +1,10 @@
 var Service, Characteristic;
+const packageFile = require('./package.json')
 
 module.exports = (homebridge) => {
-    Service = homebridge.hap.Service;
-    Characteristic = homebridge.hap.Characteristic;
-    const packageName = require('package.json').name;
-    homebridge.registerAccessory(packageName, 'GPIOValve', GPIOValveAccessory);
+    Service = homebridge.hap.Service
+    Characteristic = homebridge.hap.Characteristic
+    homebridge.registerAccessory(packageFile.name, 'GPIOValve', GPIOValveAccessory)
 }
 
 class GPIOValveAccessory {
@@ -27,6 +27,7 @@ class GPIOValveAccessory {
             .setCharacteristic(Characteristic.Manufacturer, this.manufacturer)
             .setCharacteristic(Characteristic.Model, this.model)
             .setCharacteristic(Characteristic.SerialNumber, this.serial)
+	    .setCharacteristic(Characteristic.FirmwareRevision, packageFile.version)
 
         return [
             this.informationService
