@@ -6,7 +6,7 @@
     "bugs": {
         "url": "https://github.com/jacobgelman/homebridge-gpio-valve/issues"
     },
-    "author": "Jacob Gelman <jacobgelman@icloud.com>",
+    "author": "Jacob Gelman",
     "license": "MIT",
     "keywords": [
         "homebridge-plugin"
