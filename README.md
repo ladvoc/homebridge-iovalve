@@ -9,7 +9,7 @@ npm install homebridge-gpio-valve -g
 ## Configuration
 | Name | Description | Valid Values | Default |
 |---|---|---|---|
-| `pin` | The number to use for opening and closing the valve | The physical pin number of any valid pin. The selected pin should not be written to by any external applications | None |
+| `pin` | The pin to use for opening and closing the valve | The physical pin number of any valid pin. The selected pin should not be written to by any external applications | None |
 | `defaultDuration` | The duration to open the value for when triggered. The user can change this value in the Home app | A duration in seconds no greater than 3600 (one hour) | `600` seconds (ten minutes) |
 | `type` | The type of the attatched valve. Affects the icon displayed for the accessory in the home app. | `GENERIC_VALVE`, `IRRIGATION`, `SHOWER_HEAD`, or `WATER_FAUCET`; the icon displayed currently only seems to change when this option is set to `IRRIGATION`.  | `GENERIC_VALVE` |
 | `isTimed` | Whether or not the valve is on a timer | `true` or `false` | `true` |
