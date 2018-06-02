@@ -20,6 +20,5 @@
         "moment-duration-format": "^2.2.2",
         "rpio": "^0.9.22",
         "to-case": "^2.0.0"
-    },
-    "private": true
+    }
 }
