@@ -1,4 +1,5 @@
 # Homebridge GPIO Valve
+Control a valve over a GPIO pin as a HomeKit valve accessory.
 
 ## Installation
 ```
