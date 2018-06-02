@@ -28,7 +28,7 @@ class GPIOValveAccessory {
         this.firmwareRevision = config.firmwareRevision || packageFile.version
 
         // Timer & duration
-        this.isTimed = this.isTimed || true
+        this.isTimed = config.isTimed || true
 
         if (this.isTimed) {
             this.defaultDuration  = config.defaultDuration  || 600
