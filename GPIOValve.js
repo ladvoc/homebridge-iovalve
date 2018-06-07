@@ -1,4 +1,4 @@
-const rpio = require('rpio')
+const Gpio = require('onoff').Gpio;
 
 class GPIOValve {
 
@@ -6,11 +6,15 @@ class GPIOValve {
 
         if (!pin) { throw new Error('A valve control pin must be specified') }
 
-        this._pin = pin
         this._openLevel   = +openOnHigh
         this._closedLevel = +!openOnHigh
 
-        rpio.open(pin, rpio.OUTPUT, this._closedLevel)
+        this._valve = new Gpio(pin, 'out')
+        this._writeClosed()
+
+        process.on('SIGINT', () => {
+            this._valve.unexport()
+        })
     }
 
     openFor(duration, done) {
@@ -39,7 +43,7 @@ class GPIOValve {
 
     open() {
         this._isOpen = true
-        rpio.write(this._pin, this._openLevel)
+        this._writeOpen()
     }
 
     close() {
@@ -47,7 +51,15 @@ class GPIOValve {
         this._startTime = 0
         this._duration = 0
         clearTimeout(this._timer)
-        rpio.write(this._pin, this._closedLevel)
+        this._writeClosed()
+    }
+
+    _writeOpen() {
+        this._valve.writeSync(this._openLevel)
+    }
+
+    _writeClosed() {
+        this._valve.writeSync(this._closedLevel)
     }
 
 }
