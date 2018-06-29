@@ -1,4 +1,7 @@
 # Homebridge GPIO Valve
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/jacobgelman/homebridge-gpio-valve.svg)](https://greenkeeper.io/)
+
 Control a valve over a GPIO pin as a HomeKit valve accessory.
 
 ## Installation
