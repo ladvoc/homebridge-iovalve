@@ -1,6 +1,13 @@
 # Homebridge GPIO Valve
 Control a valve over a GPIO pin as a HomeKit valve accessory.
 
+## Features
+- Quick & easy configuration
+- Add as many valves as you need: just duplicate the configuration object
+- Supports timed valves with duration customizable within the Home app
+- Identify support: by default, pressing "Identify" in the Home app will open the valve for ten seconds
+- Logs each event (valve open, valve closed, identify) in the Homebridge log
+
 ## Installation
 ```
 sudo npm install homebridge-gpio-valve -g --unsafe-perm
