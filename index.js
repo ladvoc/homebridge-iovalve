@@ -13,7 +13,7 @@ module.exports = (homebridge) => {
     Service = homebridge.hap.Service
     Characteristic = homebridge.hap.Characteristic
     storageDirectory = homebridge.user.storagePath()
-    homebridge.registerAccessory(packageFile.name, 'GPIOValve', GPIOValveAccessory)
+    homebridge.registerAccessory(packageFile.name, 'GPIO Valve', GPIOValveAccessory)
 }
 
 class GPIOValveAccessory {
