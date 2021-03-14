@@ -1,0 +1,104 @@
+{
+    "headerDisplay": "Control a valve over a GPIO pin as a HomeKit valve accessory.",
+    "pluginAlias": "GPIO Valve",
+    "pluginType": "accessory",
+    "schema": {
+        "properties": {
+            "defaultDuration": {
+                "condition": {
+                    "functionBody": "return model.isTimed === true;"
+                },
+                "default": "600",
+                "description": "The duration to open the value for when triggered. The user can change this value in the Home app",
+                "maximum": 3600,
+                "minimum": 0,
+                "required": true,
+                "title": "Default Duration (seconds)",
+                "type": "integer"
+            },
+            "identifyDuration": {
+                "condition": {
+                    "functionBody": "return model.supportsIdentify === true;"
+                },
+                "default": 10,
+                "description": "The duration to open the valve for in responce to an identify request",
+                "maximum": 60,
+                "minimum": 0,
+                "required": true,
+                "title": "Identify Duration (seconds)",
+                "type": "integer"
+            },
+            "isTimed": {
+                "default": true,
+                "description": "Whether or not the valve is on a timer",
+                "required": true,
+                "title": "Timed",
+                "type": "boolean"
+            },
+            "name": {
+                "default": "Valve",
+                "description": "The unique name for this valve",
+                "required": true,
+                "type": "string"
+            },
+            "openOnHigh": {
+                "default": true,
+                "description": "Whether or not the valve opens when the pin is high",
+                "required": true,
+                "type": "boolean"
+            },
+            "pin": {
+                "default": 0,
+                "description": "The GPIO pin to use for opening and closing the valve",
+                "minimum": 0,
+                "required": true,
+                "type": "integer"
+            },
+            "storageDirectory": {
+                "condition": {
+                    "functionBody": "return model.supportsIdentify === true;"
+                },
+                "description": "The directory for storing the user set duration. The directory is created if it does not exist",
+                "placeholder": "Set automatically",
+                "type": "string"
+            },
+            "supportsIdentify": {
+                "default": true,
+                "description": "Whether or not the valve opens in responce to an identify request. The user can trigger an identify request when adding the accessory to their home",
+                "required": true,
+                "type": "boolean"
+            },
+            "type": {
+                "default": "GENERIC_VALVE",
+                "oneOf": [{
+                        "enum": [
+                            "GENERIC_VALVE"
+                        ],
+                        "title": "Generic valve"
+                    },
+                    {
+                        "enum": [
+                            "IRRIGATION"
+                        ],
+                        "title": "Irrigation"
+                    },
+                    {
+                        "enum": [
+                            "SHOWER_HEAD"
+                        ],
+                        "title": "Shower head"
+                    },
+                    {
+                        "enum": [
+                            "WATER_FAUCET"
+                        ],
+                        "title": "Water faucet"
+                    }
+                ],
+                "required": true,
+                "type": "string"
+            }
+        },
+        "type": "object"
+    }
+}
