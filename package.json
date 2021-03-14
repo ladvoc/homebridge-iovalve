@@ -1,10 +1,10 @@
 {
-    "name": "homebridge-gpio-valve",
+    "name": "homebridge-iovalve",
     "version": "2.0.1",
     "main": "index.js",
-    "repository": "https://github.com/jacobgelman/homebridge-gpio-valve.git",
+    "repository": "https://github.com/jacobgelman/homebridge-iovalve.git",
     "bugs": {
-        "url": "https://github.com/jacobgelman/homebridge-gpio-valve/issues"
+        "url": "https://github.com/jacobgelman/homebridge-iovalve/issues"
     },
     "author": "Jacob Gelman",
     "license": "MIT",
